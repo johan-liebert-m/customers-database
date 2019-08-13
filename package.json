@@ -1,0 +1,16 @@
+{
+  "name": "customers-database",
+  "version": "1.0.0",
+  "description": "database for company customers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Fouad Nouioua",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.0-beta2"
+  }
+}
