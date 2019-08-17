@@ -69,10 +69,7 @@ app.post("/update", function(req, res) {
    MongoClient.connect(url, function(err, db) {
        if (err) throw err;
        let dbo = db.db("customers-db");
-       function capitalizeFirstLetter(string) {
-           return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-       }
-       dbo.collection("customers-collection").updateOne({ phoneNumber: req.body.phoneUpdate }, { $set: { firstName: capitalizeFirstLetter(req.body.newFirstName), lastName: capitalizeFirstLetter(req.body.newLastName), age: req.body.newAge, phoneNumber: req.body.newPhoneNumber } }, function(err, res) {
+       dbo.collection("customers-collection").updateOne({ phoneNumber: req.body.phoneUpdate }, { $set: { firstName: req.body.newFirstName, lastName: req.body.newLastName, age: req.body.newAge, phoneNumber: req.body.newPhoneNumber } }, function(err, res) {
            if (err) throw err;
            console.log("customer updated succesfully");
            db.close();

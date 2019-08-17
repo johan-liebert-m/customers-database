@@ -1,8 +1,9 @@
 exports.onError404 = function(req, res) {
 	res.status(404);
-	res.sendFile('/public/Error404.html');
+	res.sendFile(__dirname + '/Error404.html');
+}
 
 exports.onError500 = function(req, res) {
 	res.status(500);
-	res.sendFile('/public/Error500.html');
+	res.sendFile(__dirname + '/Error500.html');
 }
