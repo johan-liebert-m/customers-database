@@ -19,6 +19,6 @@ function download(filename, text) {
 let databaseText = { "database": <%- JSON.stringify(database) %> };
 let d = new Date();  
 let month = d.getMonth() + 1;
-let fileName = "Database_" + d.getDate() + "." + "0" + month + "." + d.getFullYear() + "-" + d.getHours() + "." + d.getMinutes() + "." + d.getSeconds() + ".json";</script>
+let fileName = "Database_" + d.getDate() + "." + "0" + month + "." + d.getFullYear() + "-" + d.getHours() + ".0" + d.getMinutes() + ".0" + d.getSeconds() + ".json";</script>
 </body>    
 </html>
