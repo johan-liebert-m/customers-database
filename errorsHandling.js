@@ -1,11 +1,8 @@
-const fs = require('fs');
-
-exports.onError404 = function(req, res, next) {
+exports.onError404 = function(req, res) {
 	res.status(404);
-	fs.createReadStream('./public/Error404.html').pipe(res);
-}
+	res.sendFile('/public/Error404.html');
 
-exports.onError500 = function(req, res, next) {
+exports.onError500 = function(req, res) {
 	res.status(500);
-	fs.createReadStream('./public/Error500.html').pipe(res);
+	res.sendFile('/public/Error500.html');
 }
